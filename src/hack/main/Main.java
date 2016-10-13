@@ -10,6 +10,8 @@ import java.util.Locale;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Locale;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -140,6 +142,16 @@ public class Main {
 						Locale.JAPAN, 
 						ipaddress_label, 
 						wildcard_value + i);
+		//ref http://stackoverflow.com/questions/3371879/ip-address-to-hostname-in-java
+		InetAddress addr;
+		
+		for(int i = 0; i < 10; i ++) {
+			try {
+				
+				String ipaddress;// = "104.71.168.153";
+				ipaddress = String.format(Locale.JAPAN, "104.000.000.%d", 153 + i);
+//				ipaddress = String.format(Locale.JAPAN, "104.71.168.%d", 153 + i);
+//				ipaddress = String.format(Locale.JAPAN, "104.71.168.%d", 153);
 				
 				System.out.println("ipaddress => " + ipaddress);
 				
@@ -148,6 +160,11 @@ public class Main {
 				String host = addr.getHostName();
 				
 				System.out.println("hostname => " + host + "(" + host.length() + ")");
+	//			addr = InetAddress.getByName("192.168.190.62");
+				
+				String host = addr.getHostName();
+				
+				System.out.println(host);
 				
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
@@ -157,5 +174,6 @@ public class Main {
 		}//for(int i = 0; i < 10; i ++)
 
 	}//private static void get_DomainNames
-
+		
+}
 }
