@@ -132,39 +132,28 @@ public class Main {
 		// TODO Auto-generated method stub
 	
 		//ref http://stackoverflow.com/questions/3371879/ip-address-to-hostname-in-java
-		InetAddress addr;
+		InetAddress addr1;
 		
-		for(int i = 0; i < numOfItems; i ++) {
+		for(int i1 = 0; i1 < 10; i1 ++) {
 			try {
 				
-				String ipaddress;// = "104.71.168.153";
-				ipaddress = String.format(
-						Locale.JAPAN, 
-						ipaddress_label, 
-						wildcard_value + i);
-		//ref http://stackoverflow.com/questions/3371879/ip-address-to-hostname-in-java
-		InetAddress addr;
-		
-		for(int i = 0; i < 10; i ++) {
-			try {
-				
-				String ipaddress;// = "104.71.168.153";
-				ipaddress = String.format(Locale.JAPAN, "104.000.000.%d", 153 + i);
+				String ipaddress1;// = "104.71.168.153";
+				ipaddress1 = String.format(Locale.JAPAN, "104.000.000.%d", 153 + i1);
 //				ipaddress = String.format(Locale.JAPAN, "104.71.168.%d", 153 + i);
 //				ipaddress = String.format(Locale.JAPAN, "104.71.168.%d", 153);
 				
-				System.out.println("ipaddress => " + ipaddress);
+				System.out.println("ipaddress => " + ipaddress1);
 				
-				addr = InetAddress.getByName(ipaddress);
+				addr1 = InetAddress.getByName(ipaddress1);
 				
-				String host = addr.getHostName();
+				String host = addr1.getHostName();
 				
 				System.out.println("hostname => " + host + "(" + host.length() + ")");
 	//			addr = InetAddress.getByName("192.168.190.62");
 				
-				String host = addr.getHostName();
+				String host1 = addr1.getHostName();
 				
-				System.out.println(host);
+				System.out.println(host1);
 				
 			} catch (UnknownHostException e) {
 				// TODO Auto-generated catch block
@@ -175,5 +164,4 @@ public class Main {
 
 	}//private static void get_DomainNames
 		
-}
 }
